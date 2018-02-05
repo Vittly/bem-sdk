@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 
-const bemNaming = require('@bem/sdk.naming.entity');
+const bemNamingParse = require('@bem/sdk.naming.entity.parse');
 const pathPatternParser = require('@bem/sdk.naming.cell.pattern-parser');
 
 const buildPathParseMethod = (pattern, defaultLayer, wordPattern) => {
@@ -44,7 +44,7 @@ module.exports = (convention) => {
     assert(typeof fsConv.pattern === 'string',
         '@bem/sdk.naming.cell.parse: fs.pattern field required in convention');
 
-    const entityParse = bemNaming(convention).parse;
+    const entityParse = bemNamingParse(convention);
 
     const pathParse = buildPathParseMethod(fsConv.pattern, fsConv.defaultLayer, conv.wordPattern);
 
