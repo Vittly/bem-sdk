@@ -13,7 +13,7 @@ module.exports = function parse(depsData) {
     const mustDepsIndex = {};
     const shouldDepsIndex = {};
 
-    depsData.forEach(record => {
+    [].concat(depsData).forEach(record => {
         const scope = record.scope || { entity: record.entity };
 
         if (!record.data) {
